@@ -1,0 +1,195 @@
+//========================================== Font Face
+@font-face {
+  font-family: 'Mohave';
+  src: url('../../fonts/Mohave.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/Mohave.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/Mohave.woff') format('woff'), /* Modern Browsers */
+       url('../../fonts/Mohave.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/Mohave.svg#3b03e6b824a93af237867d68dcecdeb9') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Mohave';
+  src: url('../../fonts/Mohave-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/Mohave-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/Mohave-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../../fonts/Mohave-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/Mohave-Bold.svg#478699ea99c9a4c3d27d5719feced985') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+    font-family: 'aleobold';
+    src: url('../../fonts/Aleo-Bold-webfont.eot');
+    src: url('../../fonts/Aleo-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/Aleo-Bold-webfont.woff') format('woff'),
+         url('../../fonts/Aleo-Bold-webfont.ttf') format('truetype'),
+         url('../../fonts/Aleo-Bold-webfont.svg#aleobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aleoregular';
+    src: url('../../fonts/Aleo-Regular-webfont.eot');
+    src: url('../../fonts/Aleo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/Aleo-Regular-webfont.woff') format('woff'),
+         url('../../fonts/Aleo-Regular-webfont.ttf') format('truetype'),
+         url('../../fonts/Aleo-Regular-webfont.svg#aleoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aleoitalic';
+    src: url('../../fonts/Aleo-Italic-webfont.eot');
+    src: url('../../fonts/Aleo-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/Aleo-Italic-webfont.woff') format('woff'),
+         url('../../fonts/Aleo-Italic-webfont.ttf') format('truetype'),
+         url('../../fonts/Aleo-Italic-webfont.svg#aleoitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//==========================================
+/* Media queries */
+
+
+@mixin mq($mq) {
+  @if $mq == desk {
+    @media (min-width: $break-point-lap) { @content; }
+  }
+  @if $mq == lap {
+     @media only screen and (min-width: $break-point-tablet)  and (max-width:  $break-point-lap) { @content; }
+  }
+  @if $mq == tablet {
+     @media only screen and (min-width: $break-point-phone)  and (max-width:  $break-point-tablet) { @content; }
+  }
+  @if $mq == phone {
+    @media (max-width: $break-point-phone ) { @content; }
+  }
+}
+
+
+//Set a rem font size with pixel fallback
+@function calculateRem($size) {
+  $remSize: $size / 18px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// p {
+//   @include font-size(14px)
+// }
+//Set a rem font size with pixel fallback
+
+//SVG background images with PNG and retina fallback
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+          background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+// body {
+//   @include background-image('pattern');
+// }
+
+//SVG background images with PNG and retina fallback
+
+@mixin box-emboss($outerOpacity, $innerOpacity) {
+  box-shadow:
+    rgba(lighten($verde, 10%), $outerOpacity) 0px 1px 0, 
+    rgba(darken($verde, 10%), $innerOpacity) 0 1px 0 inset;
+}
+
+
+/* TEXT SHADOW */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+/* Linear Gradient Stop 5% */
+@mixin linear-5 {
+	background: -webkit-gradient(linear, left top,left bottom, darken($verde,10%), color-stop(0.05, $verde));
+	background: -webkit-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -moz-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -ms-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -o-linear-gradient(top, darken($verde,10%), $verde 5%);
+}
+
+/* Clearing */
+@mixin clear() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Text offscreen links */
+@mixin linkTextOffscreen() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+
+/* Retina Images */
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+/* Opacity */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* Box Sizing */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}

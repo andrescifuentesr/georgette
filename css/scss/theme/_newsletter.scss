@@ -1,0 +1,40 @@
+.module-newsletter {
+	display: none;
+	background: url('../../../img/background-newsletter.jpg') ;
+	padding: 3em 5em;
+	width: 30em;
+	color:$gris-principal;
+	@include mq(tablet) {padding: 3em 1em; width: 370px; text-align: center;}
+	@include mq(phone) {padding: 3em 1em; width: 370px; text-align: center;}
+
+	h1 {
+		text-transform: uppercase;
+	}
+
+	ul {
+		margin: 0;
+	}
+
+	input[type="text"] {
+		margin-right: 0.5em;
+		padding: 10px;
+	}
+
+	input[type="submit"] {
+		font-family: $font-family;
+		font-style: normal;
+		font-weight:  400;
+		font-size: 1em;
+		text-transform: uppercase;
+		padding: 0.4em 1.5em 0.4em 3em;
+		color:#fff;
+		background: url('../../../img/buton-submit.jpg') $red-principal no-repeat;
+		border: none;
+		transition: 0.2s background ease-in;
+
+		&:hover {
+			cursor: pointer;
+			background-color: darken( $red-principal, 10%);
+		}
+	}
+}

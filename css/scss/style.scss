@@ -1,0 +1,128 @@
+//structure
+@import 'structure/variables';
+@import 'structure/mixins';
+@import 'structure/template';
+@import 'structure/grid';
+@import 'structure/typography';
+
+// inc
+@import 'inc/fancybox';
+@import 'inc/flexslider';
+
+
+//theme
+@import 'theme/base/header';
+@import 'theme/base/menu_social';
+@import 'theme/base/page';
+@import 'theme/base/loader';
+@import 'theme/menu_api';
+@import 'theme/home';
+@import 'theme/photos';
+@import 'theme/contact';
+@import 'theme/newsletter';
+@import 'theme/press';
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+html {
+	@if $custom-font-family {
+		font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
+	} @else {
+		font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+	}
+}
+
+body {
+	// Ala Trent Walton
+	color: #000;
+	background: url('../../../img/background-page-home.jpg') repeat center 170px #F5EAD4;
+}
+
+a {
+	color: #fff;
+	text-decoration:none;
+}
+
+h1 {
+	font-family: 'aleobold';
+	font-weight: normal;
+	@include font-size(28px);
+}
+
+h2 {
+	font-family: 'aleobold';
+	font-weight: normal;
+	margin-bottom: 0.2em;
+}
+
+h3 {
+	font-family: 'aleobold';
+	font-weight: normal;
+}
+
+h4 {
+	font-family: 'aleobold';
+	font-weight: normal;
+	border-bottom: 2px solid $red-principal;
+	padding-bottom: 0.3em;
+	position: relative;
+
+	&::after {
+		content:"";
+		position:absolute;
+		bottom:-6px;
+		left: 0;
+		width: 100%;
+		border-bottom: 2px solid $red-principal;
+	}
+}
+
+p {
+	font-size: 0.9em;
+}
+
+/* ========= Helperclass =========== */	
+
+
+%center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+%horizontal-center {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}

@@ -1,0 +1,68 @@
+.site-content, .content-area {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.content-area {
+	width:60%;
+	// margin: 7em 20% 2em;
+	margin: 5em 20% 2em;
+	padding: 3em 4em 4em;
+	background: url('../../../img/background-bois.jpg');
+	// border-radius:20px;
+	// border: 2px solid #DBAE89;
+	box-shadow: 10px 5px 30px #111111;
+	@include mq(lap) {width:75%; margin: 3em 12.5% 4em;}
+	@include mq(tablet) {width:90%; margin: 3em 5% 4em; padding: 3em 2em 4em;}
+	@include mq(phone) {width:97%; margin: 3em 1.5% 4em; padding: 3em 1em 4em;}
+}
+
+.site-main {
+	max-width:1200px;
+	margin:0 auto;
+	padding: 1em 3em 6em;
+	background: #fcfaf3;
+	box-shadow: 0 0 10px #333333;
+	@include mq(tablet) {padding: 1em 3em 6em;}
+	@include mq(phone) {padding: 1em;}
+}
+
+.icon-pince {
+	position: absolute;
+	top:-6em;
+	left:50%;
+	transform: translate(-50%, 0);
+}
+
+.entry-header {
+	margin-top: 2em;
+	text-align:center;
+	overflow:hidden;
+
+	.entry-title {
+		position: relative;
+		display: inline-block;
+		text-transform: uppercase;
+
+		&::before, &::after {
+			content:"";
+			position: absolute;
+			height: 5px;
+			width: 80%;
+			top: 50%;
+			transform: translate(0, -50%);
+			border-top: 1px solid #4d4d4d;
+			border-bottom: 1px solid #4d4d4d;
+		}
+
+		&::before {
+			right: 120%;
+		}
+
+		&::after {
+			left: 120%;
+		}
+	}
+}
+

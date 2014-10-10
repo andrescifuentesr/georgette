@@ -1,0 +1,59 @@
+.grid {
+	margin-left: -2em;
+}
+
+.module-presse {
+	@extend %grid__item;
+	@extend %one-quarter;
+	@extend %lap--one-third;
+	@extend %tablet--one-third;
+	@extend %phone--one-half;
+	margin-top: 1em;
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	img:hover {
+		opacity: 0.5;
+	}
+}
+
+// page press
+.module-presse-texte {
+	padding: 0.5em;
+	//border-top: 5px solid $gris-fonce;
+
+	h3 {
+		font-size: 0.85em;
+		margin: 0;
+		text-transform:uppercase;
+	}
+
+	p {
+		font-size: 0.85em;
+		margin: 0;
+	}
+
+	.lire-suite {
+		display: block;
+		font-size: 0.7em;
+		color: $red-principal;
+		font-family: 'Mohave';
+		font-style:   normal;
+		font-weight:  400;
+		padding-left:0.5em;
+		position: relative;
+
+		&::before {
+			content : '';
+			position: absolute;
+			left:0;
+			top: 7px;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			border-left: 5px solid #000;
+		}
+	}
+}

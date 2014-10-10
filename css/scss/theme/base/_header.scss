@@ -1,0 +1,207 @@
+.site-header {
+	// background: url('../../../img/background-header.jpg') repeat-x #F8F6EA;
+	width:100%;
+}
+
+.side-header-top {
+	padding: 0 0 0 20%;
+	@include mq(lap) {padding: 0 0 0 15%;}
+	@include mq(tablet) {padding: 0 0 0 20%;}
+	@include mq(phone) {padding: 0;}
+}
+
+.site-branding {
+	width: 75%;
+	display: inline-block;
+	vertical-align: top;
+	@include mq(lap) { width: 80%;}
+	@include mq(phone) {width: 100%; }
+
+	.site-title {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+		// margin-top: 0.5em;
+		margin-top: 1em;
+		margin-bottom: 0;
+		@include mq(lap) { margin-top: 1em; }
+		@include mq(phone) {margin-top: 0.1em; }
+
+		a {
+			background: url('../../../img/logo-georgette.svg') no-repeat center center;
+			display : block;
+			width: 260px;
+			height: 100px;
+			margin: 0 auto;
+			text-indent: -9999px;
+			@include mq(phone) {
+				// background: url('../../../img/logo-loulou-small.svg');
+				// height: 64px;
+				// width: 200px;
+			}
+		}
+
+	}
+	
+}
+
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	width: 100%;
+	margin-top: 0.8em;
+	padding: 0.2em 0;
+	text-align:center;
+	// border-top: 2px solid $red-principal;
+	// background: #fff;
+	//box-shadow:0 1px 3px #ccc;
+	@include mq(lap) { }
+	@include mq(tablet) {margin: 0.5em auto 0; box-shadow:none;}
+	@include mq(phone) {margin: 0.5em auto 0; box-shadow:none; padding: 0.4em 0 0;}
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation .menu > li {
+	display:inline-block;
+	position: relative;
+	padding-left: 4em;
+	position:relative;
+	transition: 0.2s all ease-in;
+	@include mq(tablet) {padding-left: 2.7em; }
+	@include mq(phone) {
+		width:100%;
+		padding: 0.5em 0;
+		margin:0.1em 0;
+		background: #F8F6EA;
+		border-bottom:4px solid #fff;
+	}
+	
+	&:hover {
+		@include mq(phone) {background: $red-principal; }
+
+		> a {
+			@include mq(phone) {color: #fff; }
+		}
+	}
+
+	&::before {
+		content: "\2022 \2022 \2022";
+		position: absolute;
+		top: .25em;
+		left: 1.2em;
+		// color:#000;
+		color:#fff;
+		@include mq(tablet) {left: 0.6em;}
+		@include mq(phone) {content: "";}
+	}
+
+	&:first-child::before {
+		content: "";
+	}
+
+}
+
+//menu home
+.main-navigation .menu > .menu-item-home {
+	padding-left:0;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+	// color: #000;
+	color:#fff;
+	font-family: 'Mohave';
+	font-style:   normal;
+	font-weight:  700;
+	font-size: 1.3em;
+	text-transform:uppercase;
+	text-align: left;
+	transition: 0.2s all ease-in;
+	@include mq(phone) {text-align: center; font-size: 1em; color:#000;}
+
+	&:hover {
+		color: $red-principal;
+	}
+}
+.main-navigation ul ul {
+	display: none;
+	float: left;
+	// left: 3em;
+	left: 2.2em;
+	position: absolute;
+	top: 2.1em;
+	z-index: 99999;
+	@include mq(phone) {position: static; float:none;}
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-navigation .menu ul a {
+	width: 200px;
+	@include mq(phone) {width:100%; text-align: center; color:#000;}
+
+	&:hover {
+		@include mq(phone) {color:$red-principal;}
+	}
+}
+.main-navigation .menu ul li {
+	// background: #F8F6EA;
+	// background: #234E61;
+	margin-top: 0.25em;
+	padding-left: 1.75em;
+	transition: 0.2s all ease-in;
+	@include mq(phone) {padding: 0.5em; background:#fff; }
+
+	// &:hover {
+	// 	@include mq(phone) {background:#000;}		
+	// }
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	color: $red-principal;
+}
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+}
+@media screen and (max-width: 44em) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.menu-toggle {
+		text-align: center;
+		font-size: 1.5em;
+		display: inline-block;
+		color: #fff;
+		border-radius: 5px;
+		padding: .2em 0.3em .2em 1.4em;
+		margin-bottom: 0.2em;
+		background: url('../../../img/icon-menu.svg') no-repeat 0.3em center $red-principal;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}

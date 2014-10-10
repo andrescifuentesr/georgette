@@ -1,0 +1,100 @@
+.template-api {
+
+	.entry-header {
+		text-align:center;
+		text-transform: uppercase;
+		margin-bottom: 3em;
+		@include mq(phone) {margin-bottom: 0;}
+	}
+}
+
+.api-menu {
+	p {
+		font-size: 0.9em;
+		line-height: 1.4em;
+	}
+
+	h2 {
+		// border-bottom: 2px solid $red-principal;
+		// padding-bottom: 0.3em;
+	}
+
+	h3 {
+		margin-bottom: 0;
+		margin-top: 1em;
+		color: $red-principal;
+	}
+
+	.menu-titre-cat {
+		margin: 2em 0 0;
+	}
+
+	.menu-titre-sous-cat {
+		margin: 0.5em 0;
+	}
+
+	.menu-liste {
+		margin: 0 0 1em;
+
+		td {
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+		}
+	}
+
+	.dish-label{
+
+	}
+
+	.dish-description {
+		font-size:0.8em;
+		//font-family: 'latolight_italic';
+	}
+
+	.dish {
+		width: 50%;
+		display:inline-block; 
+	}
+
+	.dish-price-block {
+		// font-size: 0.85em;
+	}
+
+	.price-dish {
+		width: percentage(1/6);
+		padding: 0 0.5em;
+		display:inline-block; 
+		vertical-align: top;
+		@include mq(phone) {width:100%; }
+	}
+
+	.price-2eme-dish {
+		width: percentage(1/6);
+		padding: 0 0.5em;
+		display:inline-block; 
+		vertical-align: top;
+		@include mq(phone) {width:100%; }
+	}
+
+	.price-3eme-dish {
+		width: percentage(1/6);
+		padding: 0 0.5em;
+		display:inline-block;
+		vertical-align: top;
+		@include mq(phone) {width:100%; }
+	}
+
+	.menu-colspan-2 {
+		width: percentage(2/3);
+		@include mq(phone) {width:100%; }
+	}
+
+	.menu-colspan-3 {
+		width: percentage(5/6);
+		@include mq(phone) {width:100%; }
+	}
+
+	.menu-colspan-4 {
+	}
+
+}

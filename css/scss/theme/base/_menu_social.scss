@@ -1,0 +1,169 @@
+/*--------------------------------------------------------------
+5.1 Menus socail et langues, Newsletter
+--------------------------------------------------------------*/
+.nav-social {
+	margin-top: 2em;
+	width: 25%;
+	display: inline-block;
+	position: relative;
+	@include mq(lap) { width: 20%; margin-top: 1.5em;}
+	@include mq(tablet) { margin-top: 1.5em;}
+	@include mq(phone) {margin: 0.5em auto 0.2em; width:185px; display:block;}
+}
+
+
+.bt-newsletter {
+	display:inline-block;
+	width: 50%;
+	vertical-align:top;
+	@include mq(phone) {
+		//padding-right: 0.2em; 
+		width: auto;
+	}
+
+	a {
+		background: url('../../../img/icon-newstletter.png') no-repeat center top;
+		// color: $red-principal;
+		color:#fff;
+		display: block;
+		width: 73px;
+		float: right;
+		padding-top: 2em;
+		// margin-right: 0.25em;
+		position: relative;
+		font-family: 'Mohave';
+		font-weight:normal;
+		font-size: 0.9em;
+		text-transform: uppercase;
+		transition: 0.2s all ease-in;
+		@include mq(phone) {
+			padding-top:0;
+			text-indent:-9999px;
+			width: 50px;
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.bt-tel {
+	text-align:center;
+	a {
+		// color:$red-principal;
+		color:#fff;
+		font-size: 0.9em;
+	}
+}
+
+
+//modification -- menu langues
+.menu-lang {
+	position: absolute;
+	left: 50%;
+	top: 5.5em;
+	transform: translateX(-50%);
+	@include mq(tablet) { top: 5.1em;}
+	@include mq(phone) { top: 4.5em; right: -50%; left: auto}
+
+	#lang_sel_list a, #lang_sel_list a:visited {
+		background: transparent;
+	}
+}
+//modification -- menu langues
+
+.menu-social{
+	display:inline-block;
+	width: 50%;
+	vertical-align:top;
+	margin-bottom: 0.3em;
+	padding-left: .7em;
+	@include mq(phone) {
+		margin-top: 0;
+		text-align:left;
+		width: auto;
+	}
+
+	ul {
+		margin: 0;
+		width: 56px;
+		margin: 0 0 0 0.25em;
+		text-align: left;
+		list-style:none;
+		@include mq(phone) {
+			margin: 0 0 0 0em;
+			width:auto;
+		}
+
+	}
+
+
+	li {
+		float: left;
+		width: 50%;
+		margin-bottom: 0.2em;
+		@include mq(phone) {width: (1/4)*100%; margin-bottom: 0;}
+	}
+
+	a {
+		text-indent: -9999px;
+		float: left;
+		display: block;
+		height: 25px;
+		width: 25px;
+		// margin-left: 0.3em;
+		border-radius: 50%;
+		transition: 0.2s all ease-in;
+		@include mq(phone) { margin-left: 0.3em; }
+
+	}
+
+	a[href*="twitter.com"] {
+		// background: url('../../../img/icon-twitter.svg') $red-principal no-repeat center center;
+		background: url('../../../img/icon-twitter.svg') no-repeat center center;
+		text-align: center;
+	}
+
+	a[href*="facebook.com"] {
+		// background: url('../../../img/icon-facebook.svg') $red-principal no-repeat center center;
+		background: url('../../../img/icon-facebook.svg') no-repeat center center;
+		text-align: center;
+	}
+
+	a[href*="instagram.com"] {
+		// background: url('../../../img/icon-instagram.svg') $red-principal no-repeat center center;
+		background: url('../../../img/icon-instagram.svg') no-repeat center center;
+		text-align: center;
+	}
+
+	a[href*="tripadvisor.fr"] {
+		// background: url('../../../img/icon-trip-advisor.svg') $red-principal no-repeat center center;
+		background: url('../../../img/icon-trip-advisor.svg') no-repeat center center;
+		text-align: center;
+	}
+
+	a:hover {
+		opacity: 0.7;
+	}
+}
+
+//==== fallback svg IE8, merci antoine :(
+.no-svg .menu-social  {
+	
+	a[href*="facebook.com"] {
+ 		background-image: url('../../../img/icon-facebook.png');
+ 	}
+
+ 	a[href*="twitter.com"] {
+ 		background-image: url('../../../img/icon-twitter.png');
+ 	}
+
+ 	a[href*="instagram.com"]{
+ 		background-image: url('../../../img/icon-google-plus.png');
+ 	}
+
+ 	a[href*="tripadvisor.fr"]{
+ 		background-image: url('../../../img/icon-trip-advisor.png');
+ 	}
+}
