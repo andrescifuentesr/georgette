@@ -40,7 +40,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>  <?php if ( is_page( 20 ) ) { ?> onload="initialize()" <?php } ?>>
+<body <?php body_class(); ?>  <?php if ( is_page( 20 ) || is_page( 204 ) ) { ?> onload="initialize()" <?php } ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'georgette' ); ?></a>
 
@@ -60,7 +60,7 @@
 
 				<!-- #lang nav -->
 				<div class="menu-lang clearfix">
-					<?php //do_action('icl_language_selector'); ?>
+					<?php do_action('icl_language_selector'); ?>
 				</div>
 			</div>
 		</div>

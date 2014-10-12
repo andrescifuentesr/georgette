@@ -1835,7 +1835,7 @@ html[xmlns] .slides {
   content: "";
 }
 
-.main-navigation .menu > .menu-item-home {
+.main-navigation .menu > li:first-child {
   padding-left: 0;
 }
 
@@ -2482,10 +2482,6 @@ html[xmlns] .slides {
   border-bottom: 2px solid #b31c27;
 }
 
-.entry-title--home {
-  background: url("../../../img/home/7-7.png") no-repeat left center;
-}
-
 .entry-title--home .entry-title::before,
 .entry-title--home .entry-title::after {
   width: 40%;
@@ -2582,21 +2578,25 @@ html[xmlns] .slides {
   height: 100%;
 }
 
-.post-20 p {
+.post-20 p,
+.post-204 p {
   margin-bottom: 1.1em;
 }
 
-.post-20 .map-wrapper {
+.post-20 .map-wrapper,
+.post-204 .map-wrapper {
   padding-bottom: 0.2em;
   margin-bottom: 1em;
 }
 
-.post-20 #map_canvas {
+.post-20 #map_canvas,
+.post-204 #map_canvas {
   height: 300px;
   margin: 2em 0;
 }
 
-.post-20 a {
+.post-20 a,
+.post-204 a {
   color: #4c4c4c;
   text-decoration: underline;
 }

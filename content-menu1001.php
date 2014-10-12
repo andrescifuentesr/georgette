@@ -7,11 +7,17 @@ error_reporting(0);
 $postId = get_the_ID();
 
 switch ($postId) {
-	case '11': //Carte
+	case '10': //Carte
 		$idCarte = '384336';
 		break;
 	case '34': // Brunch
 		$idCarte = '384335';
+		break;
+	case '213': // Carte
+		$idCarte = '385097';
+		break;
+	case '211': // Brunch
+		$idCarte = '385096';
 		break;
 	default:
 		$idCarte = '384336';
